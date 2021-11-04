@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Movie Rental</string>
+
+    <string name="header_image_description">headerImage</string>
+
+    <string name="poster_image_description">poster description</string>
+
+    <string name="avengers_text">Marvel\'s Avengers: Infinity War</string>
+
+    <string name="bookmark_description">bookmark description</string>
+
+    <string name="movie_details_string">April 2018 12 149 minutes</string>
+
+    <string name="rent">$4.99 Rent</string>
+
+    <string name="buy">$14.99 Buy</string>
+
+    <string name="rating_polygon_description">rating description</string>
+
+    <string name="fab_rating_text">7,936 rating</string>
+
+    <string name="fab_family_text">Family</string>
+
+    <string name="fab_rotten_tomato_text">84%</string>
+
+    <string name="fab_similar_text">Similar</string>
+
+    <string name="movie_description">Superheroes a mass to stop intergalactic sociopath Thanos from
+        acquiring a full set of Infinity Stones and wiping out half of all life in the universe.
+    </string>
+</resources>

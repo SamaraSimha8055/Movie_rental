@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/divider_gray"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/header_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/header_image_description"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <ImageView
+        android:id="@+id/cover_image_view"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/poster_image_description"
+        app:layout_constraintBottom_toBottomOf="@+id/details_text_view"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:srcCompat="@drawable/avengers_poster"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/avengers_text"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/bookmark_image_view"
+        app:layout_constraintStart_toEndOf="@+id/cover_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/header_image_view"
+        tools:text="@string/avengers_text" />
+
+    <ImageButton
+        android:id="@+id/bookmark_image_view"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@null"
+        android:contentDescription="@string/bookmark_description"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintTop_toBottomOf="@+id/header_image_view"
+        app:srcCompat="@drawable/ic_bookmark" />
+
+    <TextView
+        android:id="@+id/details_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/movie_details_string"
+        android:textColor="#616161"
+        app:layout_constraintEnd_toStartOf="@+id/bookmark_image_view"
+        app:layout_constraintStart_toEndOf="@+id/cover_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view"
+        tools:text="@string/movie_details_string" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="details_text_view,cover_image_view"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <Button
+        android:id="@+id/button_rent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:background="@color/colorAccent"
+        android:text="@string/rent"
+        android:textColor="#000000"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_buy"
+        app:layout_constraintEnd_toStartOf="@+id/button_buy"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one" />
+
+    <Button
+        android:id="@+id/button_buy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/buy"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintStart_toEndOf="@+id/button_rent"
+        app:layout_constraintTop_toBottomOf="@+id/details_text_view" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/divider_gray"
+        app:layout_constraintEnd_toEndOf="@+id/button_buy"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/button_rent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/rating_polygon_description"
+        app:layout_constraintEnd_toStartOf="@+id/fab_family"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/rating_polygon_background" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_family"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="@string/fab_rotten_tomato_text"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="normal"
+        app:layout_constraintEnd_toStartOf="@+id/fab_tomato"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/ic_family"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_tomato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/fab_similar_text"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="normal"
+        app:layout_constraintEnd_toStartOf="@+id/fab_similar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fab_family"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/tomato"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_similar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/fab_similar_text"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="normal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fab_tomato"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/ic_similar" />
+
+    <TextView
+        android:id="@+id/rating_text_view"
+        style="@style/fab_text_style"
+        android:text="@string/fab_rating_text"
+        android:textColor="#616161"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/family_text_view"
+        style="@style/fab_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/fab_family_text"
+        android:textColor="#616161"
+        app:layout_constraintEnd_toEndOf="@+id/fab_family"
+        app:layout_constraintStart_toStartOf="@+id/fab_family"
+        app:layout_constraintTop_toBottomOf="@+id/fab_family" />
+
+    <TextView
+        android:id="@+id/tomato_text_view"
+        style="@style/fab_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/fab_rotten_tomato_text"
+        android:textColor="#616161"
+        app:layout_constraintEnd_toEndOf="@+id/fab_tomato"
+        app:layout_constraintStart_toStartOf="@+id/fab_tomato"
+        app:layout_constraintTop_toBottomOf="@+id/fab_tomato" />
+
+    <TextView
+        android:id="@+id/fab_similar_text"
+        style="@style/fab_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/fab_similar_text"
+        android:textColor="#616161"
+        app:layout_constraintEnd_toEndOf="@+id/fab_similar"
+        app:layout_constraintStart_toStartOf="@+id/fab_similar"
+        app:layout_constraintTop_toBottomOf="@+id/fab_similar" />
+
+    <View
+        android:id="@+id/view_line_two"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/divider_gray"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/rating_text_view" />
+
+    <TextView
+        android:id="@+id/description_text_view"
+        style="@style/fab_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/movie_description"
+        android:textColor="#616161"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/view_line_two" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
